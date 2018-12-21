@@ -1,0 +1,34 @@
+---
+driver:
+  name: ec2
+
+transport:
+  username: ec2-user
+
+provisioner:
+  name: chef_zero
+  product_name: chefdk
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+  data_bags_path: "test/integration/default/data_bags"
+  encrypted_data_bag_secret_key_path: "test/integration/default/secret_key"
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: amazon2-2018
+    driver:
+      image_id: ami-009d6802948d06e52
+
+suites:
+  - name: default
+    run_list:
+      - recipe[elasticache::aws-config]
+      #- recipe[elasticache]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
