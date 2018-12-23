@@ -1,6 +1,6 @@
 #
 # Cookbook:: elasticache
-# Recipe:: networking
+# Recipe:: aws-config
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
