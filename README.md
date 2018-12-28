@@ -8,7 +8,7 @@ The following recipes are included:
  - **elasticache::elasticache**: Creates the memcached instance.
  - **elasticache::instance**: Provisions an ec2 instance via Chef Provisioning, using the [AWS Driver](https://docs.chef.io/provisioning_aws.html).
  - **elasticache::webserver**: Configure an Apache + PHP node, sets up the memcached instance as PHP session handler, and installs phpmycachedadmin monitoring tool.
- 
+ ![enter image description here](https://raw.githubusercontent.com/progerjkd/elasticache/master/AWS%20Architecture.png)
 ## Requirements
  - `awcli` should be installed and configured with valid AWS credentials.
  - Tested with the following ChefDK version:
