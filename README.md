@@ -1,13 +1,11 @@
-
-
 # ElastiCache Cookbook
 This is a simple cookbook to provision an ElastiCache memcached cluster.
 The following recipes are included:
 
- - **elasticache::networking**: Provisions all the infrastructure needed to deploy a VPC isolated ElastiCache instance - VPC, Subnet, Security Group and ElastiCache Subnet Group.
- - **elasticache::elasticache**: Creates the memcached instance.
- - **elasticache::instance**: Provisions an ec2 instance via Chef Provisioning, using the [AWS Driver](https://docs.chef.io/provisioning_aws.html).
- - **elasticache::webserver**: Configure an Apache + PHP node, sets up the memcached instance as PHP session handler, and installs phpmycachedadmin monitoring tool.
+ - `elasticache::networking`: Provisions all the infrastructure needed to deploy a VPC isolated ElastiCache instance - VPC, Subnet, Security Group and ElastiCache Subnet Group.
+ - `elasticache::elasticache`: Creates the memcached instance.
+ - `elasticache::instance`: Provisions an ec2 instance via Chef Provisioning, using the [AWS Driver](https://docs.chef.io/provisioning_aws.html).
+ - `elasticache::webserver`: Configure an Apache + PHP node, sets up the memcached instance as PHP session handler, and installs phpmycachedadmin monitoring tool.
  ![enter image description here](https://raw.githubusercontent.com/progerjkd/elasticache/master/AWS%20Architecture.png)
 ## Requirements
  - `awcli` should be installed and configured with valid AWS credentials.
