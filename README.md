@@ -33,7 +33,7 @@ The `elasticache::default` calls the remaining recepies in the following order:
     include_recipe 'elasticache::elasticache'
     include_recipe 'elasticache::instance'
 
-Despite required, a test kitchen run of this cookbook is [not the most appropriade way of using chef-provisioning](https://stackoverflow.com/questions/44919724/unable-to-load-provisioning-aws-driver-when-running-chef-test-kitchen).
+Despite required, a test kitchen run of this cookbook is [not the most appropriade way of using chef-provisioning](https://stackoverflow.com/questions/44919724/unable-to-load-provisioning-aws-driver-when-running-chef-test-kitchen). Nevertheless, a configured `.kitchen.yml` file is providen with an encrypted data bag.
 
 To clean up the provisioned AWS resources call:
 
