@@ -41,14 +41,13 @@ During the local-run of chef-zero server, I could not retrieve the endpoint addr
 
 The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcacheadmin via the URL shown:
 
-
-`[node01] Starting Chef Client, version 14.8.12
+    [node01] Starting Chef Client, version 14.8.12
              resolving cookbooks for run list: ["elasticache::webserver"]
              Synchronizing Cookbooks:
                - elasticache (0.1.0)
              Installing Cookbook Gems:
              Compiling Cookbooks...
              => Configuration done. <=
-             Access PHPMemcachedAdmin via URL: http://ec2-3-85-214-81.compute-1.amazonaws.com/phpmemcachedadmin`
+             Access PHPMemcachedAdmin via URL: http://ec2-3-85-214-81.compute-1.amazonaws.com/phpmemcachedadmin
 
 
