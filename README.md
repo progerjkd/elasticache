@@ -37,8 +37,6 @@ To clean up the provisioned AWS resources call:
 
     chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
-During the local-run of chef-zero server, I could not retrieve the endpoint address of the ElastiCache instance to use in the template files for PHP and phpmemcachedadmin. I think if this cookbook was run in a chef-server these values could be retrieved.
-
 The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcacheadmin via the URL shown:
 
     [node01] Starting Chef Client, version 14.8.12
