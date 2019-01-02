@@ -37,7 +37,7 @@ To clean up the provisioned AWS resources call:
 
     chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
-The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcacheadmin via the URL shown:
+The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcachedadmin via the URL shown:
 
     [node01] Starting Chef Client, version 14.8.12
              resolving cookbooks for run list: ["elasticache::webserver"]
