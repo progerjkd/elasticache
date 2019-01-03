@@ -1,11 +1,12 @@
 # ElastiCache Cookbook
-This is a simple cookbook to provision an ElastiCache memcached cluster.
+This is a simple cookbook to provision an ElastiCache memcached cluster via Chef Provisioning, using the [AWS Driver](https://docs.chef.io/provisioning_aws.html).
+
 The following recipes are included:
 
- - `elasticache::networking`: Provisions all the infrastructure needed to deploy a VPC isolated ElastiCache instance - VPC, Subnet, Security Group and ElastiCache Subnet Group.
+ - `elasticache::networking`: Provisions all resources needed to deploy a VPC isolated ElastiCache instance - VPC, Subnet, Security Group and ElastiCache Subnet Group.
  - `elasticache::elasticache`: Creates the memcached instance.
- - `elasticache::instance`: Provisions an ec2 instance via Chef Provisioning, using the [AWS Driver](https://docs.chef.io/provisioning_aws.html).
- - `elasticache::webserver`: Configure an Apache + PHP node, sets up the memcached instance as PHP session handler, and installs PHPMemcachedAdmin monitoring tool.
+ - `elasticache::instance`: Provisions an Amazon Linux 2 EC2 instance 
+ - `elasticache::webserver`: Configure an Apache + PHP node, sets up the memcached instance as PHP session handler, and installs  the PHPMemcachedAdmin monitoring tool.
  ![enter image description here](https://raw.githubusercontent.com/progerjkd/elasticache/master/AWS%20Architecture.png)
 ## Requirements
  - `awcli` should be installed and configured with valid AWS credentials.
@@ -37,7 +38,7 @@ To **clean up the provisioned AWS resources** call:
 
     $ chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
-The EC2 instance's public address will be displayed at the end of the process. You can access PHPMemcachedAdmin via the URL shown:
+The EC2 instance's public IP address will be displayed at the end of the process. You can access PHPMemcachedAdmin via the URL shown:
 
     [node01] Starting Chef Client, version 14.8.12
              resolving cookbooks for run list: ["elasticache::webserver"]
