@@ -25,7 +25,7 @@ The following recipes are included:
 
     chef-client --listen -z -r 'recipe[elasticache]'
 
-The `elasticache::default` calls the remaining recepies in the following order:
+The `elasticache::default` file calls the remaining recepies in the following order:
 
     include_recipe 'elasticache::networking'
     include_recipe 'elasticache::elasticache'
@@ -37,7 +37,15 @@ To clean up the provisioned AWS resources call:
 
     chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
-During the local-run of chef-zero server, I could not retrieve the endpoint address of the ElastiCache instance to use in the template files for PHP and phpmemcachedadmin. I think if this cookbook was run in a chef-server these values could be retrieved.
+The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcachedadmin via the URL shown:
 
+    [node01] Starting Chef Client, version 14.8.12
+             resolving cookbooks for run list: ["elasticache::webserver"]
+             Synchronizing Cookbooks:
+               - elasticache (0.1.0)
+             Installing Cookbook Gems:
+             Compiling Cookbooks...
+             => Configuration done. <=
+             Access PHPMemcachedAdmin via URL: http://ec2-3-85-214-81.compute-1.amazonaws.com/phpmemcachedadmin
 
-
+The provision and deleting of the ElastiCache memcached usually takes a long time (~6 min), please do not cancel the resource creation/deleting processes.
