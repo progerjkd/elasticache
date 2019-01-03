@@ -23,9 +23,9 @@ The following recipes are included:
 
 **To apply the cookbook, you must run it through chef-client in local-mode:**
 
-    chef-client --listen -z -r 'recipe[elasticache]'
+    $ chef-client --listen -z -r 'recipe[elasticache]'
 
-The `elasticache::default` file calls the remaining recepies in the following order:
+The `elasticache::default` file calls the recepies in the following order:
 
     include_recipe 'elasticache::networking'
     include_recipe 'elasticache::elasticache'
@@ -35,7 +35,7 @@ Despite required, a test kitchen run of this cookbook is [not the most appropria
 
 To clean up the provisioned AWS resources call:
 
-    chef-client --listen -z -r 'recipe[elasticache::destroy]'
+    $ chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
 The EC2 instance's public address will be displayed at the end of the process. You can access phpmemcachedadmin via the URL shown:
 
