@@ -48,4 +48,4 @@ The EC2 instance's public address will be displayed at the end of the process. Y
              => Configuration done. <=
              Access PHPMemcachedAdmin via URL: http://ec2-3-85-214-81.compute-1.amazonaws.com/phpmemcachedadmin
 
-The provisioning and deleting of the ElastiCache memcached usually takes a long time (~6 min), please do not cancel the resource creating/deleting processes.
+The provisioning and deleting of the ElastiCache memcached instance usually takes a long time (~6 min), please do not cancel the resource creating/deleting processes.
