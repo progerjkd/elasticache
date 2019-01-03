@@ -21,7 +21,7 @@ The following recipes are included:
 
 # Running
 
-**To apply the cookbook, you must run it through chef-client in local-mode:**
+**To apply the cookbook, you should run it through chef-client in local-mode:**
 
     $ chef-client --listen -z -r 'recipe[elasticache]'
 
@@ -33,7 +33,7 @@ The `elasticache::default` file calls the recepies in the following order:
 
 Despite required, a test kitchen run of this cookbook is [not the most appropriade way of using chef-provisioning](https://stackoverflow.com/questions/44919724/unable-to-load-provisioning-aws-driver-when-running-chef-test-kitchen). Nevertheless, a configured `.kitchen.yml` file is providen with an encrypted data bag.
 
-To clean up the provisioned AWS resources call:
+To **clean up the provisioned AWS resources** call:
 
     $ chef-client --listen -z -r 'recipe[elasticache::destroy]'
 
