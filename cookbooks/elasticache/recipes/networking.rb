@@ -2,7 +2,7 @@
 # Cookbook:: elasticache
 # Recipe:: networking
 #
-# Copyright:: 2018, The Authors, All Rights Reserved.
+# Copyright:: 2018, Roger Vasconcelos, All Rights Reserved.
 
 aws_vpc 'cacheVPC' do
   cidr_block '172.16.0.0/16'
@@ -21,9 +21,9 @@ aws_security_group 'cacheSG' do
   vpc 'cacheVPC'
   description 'Security Group for elasticache testing'
   inbound_rules [
-    {:port => 22, :protocol => :tcp, :sources => ['0.0.0.0/0'] },
-    {:port => 80, :protocol => :tcp, :sources => ['0.0.0.0/0'] },
-    {:port => 11211, :protocol => :tcp, :sources => ['cacheSG'] }
+    { port: 22, protocol: :tcp, sources: ['0.0.0.0/0'] },
+    { port: 80, protocol: :tcp, sources: ['0.0.0.0/0'] },
+    { port: 11211, protocol: :tcp, sources: ['cacheSG'] },
   ]
 end
 

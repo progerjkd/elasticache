@@ -2,7 +2,7 @@
 # Cookbook:: elasticache
 # Spec:: elasticache
 #
-# Copyright:: 2018, The Authors, All Rights Reserved.
+# Copyright:: 2018, Roger Vasconcelos, All Rights Reserved.
 
 require 'spec_helper'
 
